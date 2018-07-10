@@ -35,7 +35,7 @@
 
 1. 通用额外配置参数
 
-| 名称  | 类型  | 是否必须  | 描述  |
+| 名称  | 类型  | 必须  | 描述  |
 | ------------ | ------------ | ------------ | ------------ |
 | PushTime | string | 否 | 用于定时发送。不设置缺省是立即发送。时间格式按照ISO8601标准表示，并需要使用UTC时间，格式为YYYY-MM-DDThh:mm:ssZ。 |
 | StoreOffline | bool | 否 | 离线消息/通知是否保存。若保存，在推送时候用户不在线，在过期时间（ExpireTime）内用户上线时会被再次发送。StoreOffline默认设置为false，ExpireTime默认为72小时。（iOS通知走Apns链路，不受StoreOffline影响） |
@@ -43,7 +43,7 @@
 
 2. 安卓额外配置参数
 
-| 名称  | 类型  | 是否必须  | 描述  |
+| 名称  | 类型  | 必须  | 描述  |
 | ------------ | ------------ | ------------ | ------------ |
 | AndroidMusic | string | 否 | Android通知声音（保留参数，当前暂不起作用） |
 | AndroidOpenType | string | 否 | 点击通知后动作 `APPLICATION`：打开应用 默认值 `ACTIVITY`：打开应用AndroidActivity `URL`：打开URL `NONE`：无跳转 |
@@ -60,7 +60,7 @@
         
 3. IOS额外配置参数
 
-| 名称  | 类型  | 是否必须  | 描述  |
+| 名称  | 类型  | 必须  | 描述  |
 | ------------ | ------------ | ------------ | ------------ |
 | iOSMusic | string | 否 | iOS通知声音，指定存放在app bundle或沙盒Library/Sounds目录下的音频文件名，参考：[iOS推送如何设定通知声音](https://help.aliyun.com/document_detail/48906.html?spm=a2c4g.11186623.2.5.w7Bo1d)，（若指定为空串（””），通知为静音；若不设置，默认填充default为系统提示音） |
 | iOSBadge | integer | 否 | iOS应用图标右上角角标。注意，若iOSBadgeAutoIncrement设置为True，则此项必须为空。 |
