@@ -23,7 +23,7 @@
         "psr-4": {
             "Jormin\\Aliyun\\": "src",
             "Aliyun\\": "sdk/aliyun-dysms-php-sdk/api_sdk/lib/",
-            "Aliyun\\Test": "sdk/aliyun-dysms-php-sdk/api_sdk/tests"
+            "Aliyun\\Test\\": "sdk/aliyun-dysms-php-sdk/api_sdk/tests"
         }
     }
 }
