@@ -2,7 +2,7 @@
 
 namespace Jormin\Aliyun;
 
-include_once dirname(__FILE__).'/../aliyun-openapi-php-sdk/aliyun-php-sdk-core/Config.php';
+include_once dirname(__FILE__).'/../sdk/aliyun-openapi-php-sdk/aliyun-php-sdk-core/Config.php';
 
 /**
  * Class BaseObject
