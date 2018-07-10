@@ -24,6 +24,8 @@ $ composer require jormin/aliyun -vvv
 
 - [移动推送](doc/push.md)
 
+- [短信服务](doc/sms.md)
+
 ## 参考项目
 
 1. [aliyun/aliyun-openapi-php-sdk](https://github.com/aliyun/aliyun-openapi-php-sdk?spm=a2c4g.11186623.2.3.cScbtO)

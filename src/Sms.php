@@ -80,10 +80,10 @@ class Sms extends BaseObject {
      * @param $sendDate
      * @param int $page
      * @param int $pageSize
-     * @param string $BizId
+     * @param string $bizId
      * @return array
      */
-    public function querySendDetails($phone, $sendDate, $page=1, $pageSize=10, $BizId="") {
+    public function querySendDetails($phone, $sendDate, $page=1, $pageSize=10, $bizId="") {
         if(!$phone || !$sendDate){
             return $this->error('参数有误');
         }
@@ -92,8 +92,8 @@ class Sms extends BaseObject {
         $request->setSendDate($sendDate);
         $request->setPageSize($pageSize);
         $request->setCurrentPage($page);
-        if($BizId){
-            $request->setBizId($BizId);
+        if($bizId){
+            $request->setBizId($bizId);
         }
         return $this->parseResponse($request, '查询');
     }
