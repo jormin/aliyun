@@ -13,9 +13,9 @@
 2. 发送单条短信
 
     ```php
+    $phone = '手机号';
     $signature = '短信签名';
     $templateCode = '短信模板编码';
-    $phone = '手机号';
     // 短信模板参数数组
     $extData = [];
     $sms->sendSms($phone,$signature, $templateCode, $extData);
@@ -24,11 +24,11 @@
 3. 批量发送短信
 
     ```php
+    // 手机号数组
+    $phones = [];
     // 短信签名数组
     $signatures = [];
     $templateCode = '短信模板编码';
-    // 手机号数组
-    $phones = [];
     // 短信模板参数二维数组
     $extDatas = [];
     $sms->sendBatchSms($phones,$signatures, $templateCode, $extDatas);
