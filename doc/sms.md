@@ -7,7 +7,7 @@
     ``` php
     $accessKeyId = 'your access key id';
     $accessKeySecret = 'your access key secret';
-    $push = new \Jormin\Aliyun\Sms($accessKeyId, $accessKeySecret);
+    $sms = new \Jormin\Aliyun\Sms($accessKeyId, $accessKeySecret);
     ```
 
 2. 发送单条短信
