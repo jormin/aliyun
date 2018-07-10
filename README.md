@@ -6,6 +6,20 @@
 $ composer require jormin/aliyun -vvv
 ```
 
+## 通用配置
+
+ - accessKeyId: 阿里云Access Key ID
+ - accessKeySecret: 阿里云Access Key Secret
+
+## 通用响应
+
+    | 参数  | 类型  | 是否必须  | 描述  |
+    | ------------ | ------------ | ------------ | ------------ |
+    | error | bool | 是 | false：操作成功 true:操作失败 |
+    | message | string | 是 | 结果说明 |
+    | data | array | 否 | 返回数据 |
+
+
 ## 功能文档
 
 - [移动推送](doc/push.md)
