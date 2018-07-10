@@ -1,12 +1,12 @@
 {
-    "name": "jormin/qiniu",
+    "name": "jormin/aliyun",
     "type": "library",
-    "description": "七牛",
+    "description": "阿里云",
     "keywords": [
         "Jormin",
-        "七牛"
+        "阿里云"
     ],
-    "homepage": "https://github.com/jormin/qiniu",
+    "homepage": "https://github.com/jormin/aliyun",
     "license": "MIT",
     "authors": [
         {
@@ -17,12 +17,11 @@
         }
     ],
     "require": {
-        "php": "^5.6 || ^7.0",
-        "qiniu/php-sdk": "^7.2"
+        "php": "^5.6 || ^7.0"
     },
     "autoload": {
         "psr-4": {
-            "Jormin\\Qiniu\\": "src"
+            "Jormin\\Aliyun\\": "src"
         }
     }
 }
