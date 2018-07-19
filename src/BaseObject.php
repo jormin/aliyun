@@ -34,7 +34,7 @@ class BaseObject{
      */
     public function error($message, $data=null){
         is_object($data) && $data = (array)$data;
-        $return = ['error' => true, 'message' => $message, 'data'=>$data];
+        $return = ['success' => false, 'message' => $message, 'data'=>$data];
         return $return;
     }
 
@@ -47,7 +47,7 @@ class BaseObject{
      */
     public function success($message, $data=null){
         is_object($data) && $data = (array)$data;
-        $return = ['error' => false, 'message' => $message, 'data'=>$data];
+        $return = ['success' => true, 'message' => $message, 'data'=>$data];
         return $return;
     }
 }
