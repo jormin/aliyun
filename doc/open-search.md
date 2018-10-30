@@ -9,7 +9,8 @@
     ``` php
     $accessKeyId = 'your access key id';
     $accessKeySecret = 'your access key secret';
-    $openSearch = new \Jormin\Aliyun\OpenSearch($accessKeyId, $accessKeySecret, [$debug=false]);
+    $host = 'aliyun open-search public api domain';
+    $openSearch = new \Jormin\Aliyun\OpenSearch($accessKeyId, $accessKeySecret, $host, [$debug=false]);
     ```
 
 2. [获取App列表](https://help.aliyun.com/document_detail/57153.html?spm=a2c4g.11186623.2.17.78037349nXMfc2)
