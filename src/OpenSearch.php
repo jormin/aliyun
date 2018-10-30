@@ -2,7 +2,7 @@
 
 namespace Jormin\Aliyun;
 
-include_once '../sdk/aliyun-opensearch-php-sdk/OpenSearch/Autoloader/Autoloader.php';
+include_once __DIR__.'/../sdk/aliyun-opensearch-php-sdk/OpenSearch/Autoloader/Autoloader.php';
 use OpenSearch\Client\AppClient;
 use OpenSearch\Client\DocumentClient;
 use OpenSearch\Client\OpenSearchClient;
