@@ -5,8 +5,8 @@ namespace Jormin\Aliyun;
 use \Push\Request\V20160801 as AliyunPush;
 
 /**
- * Class BaseObject
- * @package Jormin\Qiniu
+ * Class Push
+ * @package Jormin\Aliyun
  */
 class Push extends BaseObject {
 

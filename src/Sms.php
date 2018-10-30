@@ -10,8 +10,8 @@ use Aliyun\Core\DefaultAcsClient;
 use Aliyun\Core\Profile\DefaultProfile;
 
 /**
- * Class BaseObject
- * @package Jormin\Qiniu
+ * Class Sms
+ * @package Jormin\Aliyun
  */
 class Sms extends BaseObject {
 
