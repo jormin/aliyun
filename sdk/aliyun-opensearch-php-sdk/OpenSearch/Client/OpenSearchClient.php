@@ -223,7 +223,7 @@ class OpenSearchClient extends OpenSearch {
     private function _filter($parameters = array()){
         $params = array();
         if(!empty($parameters)){
-            while (list ($key, $val) = each ($parameters)) {
+            foreach ($parameters as $key => $val) {
                 if ($key == "Signature" ||$val === "" || $val === NULL){
                     continue;
                 } else {
