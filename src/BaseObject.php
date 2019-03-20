@@ -27,7 +27,6 @@ class BaseObject{
 
     /**
      * 失败
-     *
      * @param $message
      * @param null $data
      * @return array
@@ -40,7 +39,6 @@ class BaseObject{
 
     /**
      * 成功
-     *
      * @param $message
      * @param null $data
      * @return array

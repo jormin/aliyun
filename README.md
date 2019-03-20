@@ -30,6 +30,8 @@ $ composer require jormin/aliyun -vvv
 
 - [RocketMQ](doc/mq.md)
 
+- [Oss](doc/oss.md)
+
 ## 参考项目
 
 1. [aliyun/aliyun-openapi-php-sdk](https://github.com/aliyun/aliyun-openapi-php-sdk?spm=a2c4g.11186623.2.3.cScbtO)
