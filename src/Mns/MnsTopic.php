@@ -9,6 +9,10 @@
 namespace Jormin\Aliyun\Mns;
 
 
+use AliyunMNS\Exception\MnsException;
+use AliyunMNS\Model\SubscriptionAttributes;
+use AliyunMNS\Requests\CreateTopicRequest;
+use AliyunMNS\Requests\PublishMessageRequest;
 use Jormin\Aliyun\Mns;
 
 class MnsTopic extends Mns
