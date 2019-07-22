@@ -76,7 +76,7 @@ class Log extends BaseObject
      * @param bool $reverse
      * @return array
      */
-    public function getLogs(string $project, string $logStore, int $from, int $to, string $topic, string $query, int $line = 100, $offset = 0, $reverse = false)
+    public function getLogs(string $project, string $logStore, int $from, int $to, string $topic, string $query, int $line = 100, int $offset = 0, bool $reverse = false)
     {
         try {
             $request = new \Aliyun_Log_Models_GetLogsRequest($project, $logStore, $from, $to, $topic, $query, $line, $offset, $reverse);
