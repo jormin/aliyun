@@ -2,13 +2,14 @@
 
 namespace Jormin\Aliyun;
 
-include_once dirname(__FILE__).'/../sdk/aliyun-openapi-php-sdk/aliyun-php-sdk-core/Config.php';
+include_once dirname(__FILE__) . '/../sdk/aliyun-openapi-php-sdk/aliyun-php-sdk-core/Config.php';
 
 /**
  * Class BaseObject
  * @package Jormin\Qiniu
  */
-class BaseObject{
+class BaseObject
+{
 
     protected $accessKeyId, $accessKeySecret, $client;
 
@@ -31,9 +32,10 @@ class BaseObject{
      * @param null $data
      * @return array
      */
-    public function error($message, $data=null){
+    public function error($message, $data = null)
+    {
         is_object($data) && $data = (array)$data;
-        $return = ['success' => false, 'message' => $message, 'data'=>$data];
+        $return = ['success' => false, 'message' => $message, 'data' => $data];
         return $return;
     }
 
@@ -43,9 +45,10 @@ class BaseObject{
      * @param null $data
      * @return array
      */
-    public function success($message, $data=null){
+    public function success($message, $data = null)
+    {
         is_object($data) && $data = (array)$data;
-        $return = ['success' => true, 'message' => $message, 'data'=>$data];
+        $return = ['success' => true, 'message' => $message, 'data' => $data];
         return $return;
     }
 
@@ -54,12 +57,15 @@ class BaseObject{
      * @param $data
      * @return array
      */
-    public function objectToArray($data){
-        if(is_object($data)){
+    public function objectToArray($data)
+    {
+        if (is_object($data)) {
             $data = (array)$data;
         }
-        foreach ($data as $key => $item){
-            $data[$key] = $this->objectToArray($item);
+        if (is_array($data)) {
+            foreach ($data as $key => $item) {
+                $data[$key] = $this->objectToArray($item);
+            }
         }
         return $data;
     }
