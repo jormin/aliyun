@@ -9,13 +9,12 @@
 namespace Jormin\Aliyun;
 
 use Green\Request\V20180509\ImageSyncScanRequest;
-use MQ\MQClient;
 
 class Yundun extends BaseObject
 {
 
     /**
-     * @var MQClient
+     * @var \DefaultAcsClient
      */
     protected $client;
 
@@ -40,6 +39,12 @@ class Yundun extends BaseObject
         $this->client = new \DefaultAcsClient($iClientProfile);
     }
 
+    /**
+     * 图片审核
+     * @param array $tasks
+     * @param array $scenes
+     * @return array
+     */
     public function imageScan(array $tasks, array $scenes){
         $request = new ImageSyncScanRequest();
         $request->setMethod('POST');
