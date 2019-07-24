@@ -48,4 +48,19 @@ class BaseObject{
         $return = ['success' => true, 'message' => $message, 'data'=>$data];
         return $return;
     }
+
+    /**
+     * 嵌套对象转数组
+     * @param $data
+     * @return array
+     */
+    public function objectToArray($data){
+        if(is_object($data)){
+            $data = (array)$data;
+        }
+        foreach ($data as $key => $item){
+            $data[$key] = $this->objectToArray($item);
+        }
+        return $data;
+    }
 }
