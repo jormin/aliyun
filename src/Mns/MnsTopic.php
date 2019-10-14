@@ -24,15 +24,16 @@ class MnsTopic extends Mns
      * @param null $attributes
      * @return array
      */
-    public function createTopic(string $topicName, $attributes=null) {
-        if(!$topicName){
+    public function createTopic(string $topicName, $attributes = null)
+    {
+        if (!$topicName) {
             return $this->error('参数有误');
         }
         $request = new CreateTopicRequest($topicName, $attributes);
-        try{
+        try {
             $this->client->createTopic($request);
             return $this->success('创建主题成功');
-        }catch(MnsException $exception){
+        } catch (MnsException $exception) {
             return $this->parseException($exception, '创建主题');
         }
     }
@@ -42,14 +43,15 @@ class MnsTopic extends Mns
      * @param string $topicName
      * @return array
      */
-    public function deleteTopic(string $topicName) {
-        if(!$topicName){
+    public function deleteTopic(string $topicName)
+    {
+        if (!$topicName) {
             return $this->error('参数有误');
         }
-        try{
+        try {
             $this->client->deleteTopic($topicName);
             return $this->success('删除主题成功');
-        }catch(MnsException $exception){
+        } catch (MnsException $exception) {
             return $this->parseException($exception, '删除主题');
         }
     }
@@ -66,16 +68,17 @@ class MnsTopic extends Mns
      * @param null $lastModifyTime
      * @return array
      */
-    public function subscribe(string $topicName, string $subscribeName, $endPoint, $strategy = null, $contentFormat = null, $topicOwner = null, $createTime = null, $lastModifyTime = null) {
-        if(!$topicName || !$subscribeName || !$endPoint){
+    public function subscribe(string $topicName, string $subscribeName, $endPoint, $strategy = null, $contentFormat = null, $topicOwner = null, $createTime = null, $lastModifyTime = null)
+    {
+        if (!$topicName || !$subscribeName || !$endPoint) {
             return $this->error('参数有误');
         }
         $topic = $this->client->getTopicRef($topicName);
         $attributes = new SubscriptionAttributes($subscribeName, $endPoint, $strategy, $contentFormat, $topicName, $topicOwner, $createTime, $lastModifyTime);
-        try{
+        try {
             $topic->subscribe($attributes);
             return $this->success('创建订阅成功');
-        }catch(MnsException $exception){
+        } catch (MnsException $exception) {
             return $this->parseException($exception, '创建订阅');
         }
     }
@@ -86,15 +89,16 @@ class MnsTopic extends Mns
      * @param string $subscribeName
      * @return array
      */
-    public function unsubscribe(string $topicName, string $subscribeName) {
-        if(!$topicName || !$subscribeName){
+    public function unsubscribe(string $topicName, string $subscribeName)
+    {
+        if (!$topicName || !$subscribeName) {
             return $this->error('参数有误');
         }
         $topic = $this->client->getTopicRef($topicName);
-        try{
+        try {
             $topic->unsubscribe($subscribeName);
             return $this->success('取消订阅成功');
-        }catch(MnsException $exception){
+        } catch (MnsException $exception) {
             return $this->parseException($exception, '取消订阅');
         }
     }
@@ -102,19 +106,24 @@ class MnsTopic extends Mns
     /**
      * 发布消息
      * @param string $topicName
-     * @param string $message
+     * @param string $messageBody
+     * @param string $messageTag
      * @return array
      */
-    public function publishMessage(string $topicName, string $message){
-        if(!$topicName || !$message){
+    public function publishMessage(string $topicName, string $messageBody, string $messageTag)
+    {
+        if (!$topicName || !$messageBody) {
             return $this->error('参数有误');
         }
         $topic = $this->client->getTopicRef($topicName);
-        $request = new PublishMessageRequest($message);
-        try{
+        $request = new PublishMessageRequest($messageBody);
+        if ($messageTag) {
+            $request->setMessageTag($messageTag);
+        }
+        try {
             $topic->publishMessage($request);
             return $this->success('发布消息成功');
-        }catch(MnsException $exception){
+        } catch (MnsException $exception) {
             return $this->parseException($exception, '发布消息');
         }
     }
