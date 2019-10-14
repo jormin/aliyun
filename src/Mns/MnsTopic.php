@@ -110,7 +110,7 @@ class MnsTopic extends Mns
      * @param string $messageTag
      * @return array
      */
-    public function publishMessage(string $topicName, string $messageBody, string $messageTag)
+    public function publishMessage(string $topicName, string $messageBody, string $messageTag = null)
     {
         if (!$topicName || !$messageBody) {
             return $this->error('参数有误');
