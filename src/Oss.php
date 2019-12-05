@@ -9,14 +9,13 @@
 namespace Jormin\Aliyun;
 
 
-use MQ\MQClient;
 use OSS\OssClient;
 
 class Oss extends BaseObject
 {
 
     /**
-     * @var MQClient
+     * @var OssClient
      */
     protected $client;
 
@@ -24,6 +23,14 @@ class Oss extends BaseObject
      * @var string Endpoint
      */
     protected $endPoint;
+
+    /**
+     * @return OssClient
+     */
+    public function getClient(): OssClient
+    {
+        return $this->client;
+    }
 
     /**
      * Oss constructor.
